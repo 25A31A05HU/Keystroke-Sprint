@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* The linear-gradient creates a 70% dark overlay on top of your image */
+    background-image: 
+        linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)),
+        url('bg.png'); /* Ensure your background image is named bg.png in the same folder */
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    color: #d4d5d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #252526;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4fc1ff;
+}
+
+.text-display {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: #9e9e9e; /* Brightened grey for better contrast against the background */
+    text-align: justify;
+}
+
+/* Dynamic classes applied by JS */
+.correct { color: #89d185; } /* Green */
+.incorrect { color: #f48771; background-color: rgba(244, 135, 113, 0.2); } /* Red */
+
+.text-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -999;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button {
+    background-color: #0e639c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) { 
+    background-color: #1177bb; 
+}
+
+/* Style for when the button is disabled in the middle of a test */
+button:disabled {
+    background-color: #444;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #252526;
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+    border: 1px solid #4fc1ff;
+}
+
+.modal-content h2 {
+    color: #4fc1ff;
+    margin-bottom: 1.5rem;
+}
+
+.modal-stats {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.modal-stats span {
+    color: #89d185;
+    font-weight: bold;
+}

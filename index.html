@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-group">
+                <h1>Test your typing speed!</h1>
+                <h2>Speed Tester</h2>
+            </div>
+            <div class="stats">
+                <div class="stat-box">Time: <span id="time">60</span>s</div>
+                <div class="stat-box">WPM: <span id="wpm">0</span></div>
+            </div>
+        </header>
+
+        <div class="text-display" id="text-display"></div>
+        <textarea id="text-input" class="text-input" autofocus></textarea>
+        
+        <div class="action-buttons">
+            <button id="restart-btn">Restart Test</button>
+            <button id="change-text-btn">Change Paragraph</button>
+    </div>
+
+    <!-- The Pop-up Modal -->
+    <div id="result-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Test Complete! 🚀</h2>
+            <div class="modal-stats">
+                <p>Speed: <span id="final-wpm">0</span> WPM</p>
+                <p>Accuracy: <span id="final-accuracy">0</span>%</p>
+            </div>
+            <button id="close-modal-btn">Try Another Paragraph</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
